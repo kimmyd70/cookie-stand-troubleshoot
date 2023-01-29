@@ -6,8 +6,7 @@ from django.urls import reverse
 class CookieStand(models.Model):
     location = models.CharField(max_length=256)
     owner = models.ForeignKey(
-        get_user_model(), on_delete=models.CASCADE, null=True, blank=True
-    )
+        get_user_model(), on_delete=models.CASCADE, blank=True, null=True)
     description = models.TextField(blank=True)
     hourly_sales = models.JSONField(default=list, null=True)
     minimum_customers_per_hour = models.IntegerField(default=0)
